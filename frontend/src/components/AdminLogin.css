@@ -1,0 +1,80 @@
+:root {
+    --primary-blue: #375e97;
+    --primary-orange: #fb6542;
+    --primary-yellow: #ffbb00;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333333;
+  
+    /* Font Variables */
+    --heading-font: 'Ultra', sans-serif;
+    --body-font: 'Domine', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--light-gray);
+  }
+  
+  .admin-login-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px; /* Adjust margin as needed */
+    width: fit-content; /* Adjusts width to content size */
+  }
+  
+  .admin-login-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .admin-login-heading {
+    font-family: var(--heading-font);
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .admin-login-input {
+    font-family: var(--body-font);
+    padding: 10px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .admin-login-input:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+  }
+  
+  .admin-login-button {
+    font-family: var(--heading-font);
+    background-color: var(--primary-orange);
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .admin-login-button:hover {
+    background-color: var(--primary-yellow);
+    transform: translateY(-3px);
+  }
+  
+  .admin-login-button:active {
+    transform: translateY(0);
+  }
+  

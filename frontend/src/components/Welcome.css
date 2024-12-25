@@ -1,0 +1,78 @@
+/* Welcome Page */
+.welcome-page {
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #2e2e2e, #4a4a4a, #6e6e6e, #8a8a8a);
+  background-size: 400% 400%;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+/* Logo */
+.welcome-logo {
+  width: 200px;  /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 50%; /* Makes the logo circular */
+  margin-bottom: 40px; /* Increased margin below the logo */
+  animation: fadeIn 1s ease-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+}
+
+/* Main Heading */
+.welcome-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  animation: slideDown 1s ease-out;
+}
+
+/* Tagline */
+.welcome-tagline {
+  font-size: 1.5rem;
+  color: #dcdcdc;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); }
+  to { transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-logo {
+    width: 150px;  /* Smaller size on mobile */
+    height: 150px;
+  }
+  
+  .welcome-heading {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-tagline {
+    font-size: 1.2rem;
+  }
+}

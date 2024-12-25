@@ -1,0 +1,136 @@
+/* Container styling */
+.notifications-container {
+    max-width: 800px; /* Increased from 600px */
+    width: 90%; /* Added to ensure container is responsive */
+    margin: 20px auto;
+    padding: 30px; /* Increased from 20px */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Header styling */
+  .notifications-container h2 {
+    color: #1a1a1a;
+    font-size: 1.75rem; /* Increased from 1.5rem */
+    margin-bottom: 25px; /* Increased from 20px */
+    padding-bottom: 12px; /* Increased from 10px */
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  /* Empty state styling */
+  .notifications-container p {
+    color: #666;
+    text-align: center;
+    padding: 25px; /* Increased from 20px */
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin: 0;
+    font-size: 1.1rem; /* Added for better readability */
+  }
+  
+  /* Notifications list container */
+  .notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Increased from 12px */
+  }
+  
+  /* Individual notification item */
+  .notification-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px; /* Increased from 12px 16px */
+    background: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #4F46E5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .notification-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Notification content styling */
+  .notification-content {
+    flex: 1;
+  }
+  
+  .notification-content p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.6; /* Increased from 1.5 */
+    background: transparent;
+    padding: 0;
+    font-size: 1.1rem; /* Added for better readability */
+  }
+  
+  .notification-content strong {
+    color: #1f2937;
+    font-weight: 600;
+  }
+  
+  /* Delete button styling */
+  .delete-notification {
+    background: transparent;
+    border: none;
+    padding: 10px; /* Increased from 8px */
+    cursor: pointer;
+    color: #6b7280;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .delete-notification:hover {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+  
+  /* Time ago text styling */
+  time {
+    color: #6b7280;
+    font-size: 0.925rem; /* Increased from 0.875rem */
+  }
+  
+  /* Different notification types styling */
+  .notification-item[data-type="post"] {
+    border-left-color: #4F46E5;
+  }
+  
+  .notification-item[data-type="like"] {
+    border-left-color: #EC4899;
+  }
+  
+  .notification-item[data-type="comment"] {
+    border-left-color: #10B981;
+  }
+  
+  .notification-item[data-type="listing"] {
+    border-left-color: #F59E0B;
+  }
+  
+  .notification-item[data-type="join"] {
+    border-left-color: #6366F1;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 640px) {
+    .notifications-container {
+      margin: 10px;
+      padding: 20px; /* Increased from 15px */
+      width: 95%; /* Added for better mobile response */
+    }
+    
+    .notification-item {
+      padding: 12px 16px; /* Increased from 10px 12px */
+    }
+    
+    .notification-content p {
+      font-size: 1rem; /* Increased from 0.875rem */
+    }
+  }

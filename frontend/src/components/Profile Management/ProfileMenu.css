@@ -1,0 +1,83 @@
+.profile-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-trigger {
+    cursor: pointer;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 16px;
+    min-width: 250px;
+    z-index: 1000;
+    margin-top: 8px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .profile-pic-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .profile-info p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .profile-actions {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .profile-actions button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .profile-actions button:hover {
+    background: #e5e5e5;
+  }

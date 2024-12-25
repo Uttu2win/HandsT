@@ -1,0 +1,65 @@
+.about-section {
+  text-align: center;
+  padding: 20px;
+  height: 100vh; /* Full height of the container */
+}
+
+.about-heading {
+  font-size: 36px; /* Larger heading size */
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures wrapping of cards */
+  justify-content: space-around; /* Distributes cards evenly */
+  gap: 20px; /* Adds space between cards */
+  width: 80%; /* 80% of container width */
+  margin: 0 auto; /* Centers the cards horizontally */
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* Makes each card take 33.33% of the container width minus the gap */
+  box-sizing: border-box; /* Ensures padding/margin is included in width calculation */
+  background-color: #fff; /* Optional background for card */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  height: 80%; /* 80% height */
+}
+
+.card img {
+  width: 100%; /* Ensures the image spans the width of its container */
+  height: 200px; /* Fixed height for equal sizing */
+  object-fit: cover; /* Ensures images maintain aspect ratio and fill the container */
+  border-radius: 8px;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Smooth transition for hover effects */
+}
+
+.card img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  opacity: 0.9; /* Slight fade effect */
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.ok-button {
+  width: 150px;
+  padding: 10px;
+  background-color: #ff5722;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px; /* Increase button font size */
+  cursor: pointer;
+  margin-top: 30px; 
+  margin-bottom: 30px; /* Add margin to move button down */
+}
+
+.ok-button:hover {
+  background-color: #e64a19;
+}

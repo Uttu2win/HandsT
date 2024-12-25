@@ -1,0 +1,35 @@
+.neighborhood-form {
+    display: flex;
+    gap: 15px; /* Add gap between input fields and button */
+    align-items: center; /* Center the items vertically */
+}
+
+.neighborhood-form input,
+.neighborhood-form textarea {
+    padding: 5px; /* Padding inside the input fields */
+    width: 45%; /* Take up half the space of the container */
+    font-family: var(--body-font);
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding doesn't increase field width */
+}
+
+.neighborhood-form textarea {
+    width: 50%; /* Adjust width for textarea */
+}
+
+.neighborhood-form button {
+    padding: 5px 10px;
+    font-family: var(--body-font);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-blue); /* Blue background for button */
+    color: var(--white);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.neighborhood-form button:hover {
+    background-color: var(--primary-orange); /* Hover effect for button */
+    color: var(--white);
+}

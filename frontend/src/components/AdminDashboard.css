@@ -1,0 +1,86 @@
+:root {
+    --primary-blue: #375e97;
+    --primary-orange: #fb6542;
+    --primary-yellow: #ffbb00;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333333;
+  
+    /* Font Variables */
+    --heading-font: 'Ultra', sans-serif;
+    --body-font: 'Domine', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--light-gray);
+  }
+  
+  .admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  header h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-blue);
+    margin: 0;
+  }
+  
+  .dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-right: 20px; /* Margin for spacing from the edge */
+  }
+  
+  .dashboard-actions button {
+    font-family: var(--body-font);
+    background-color: var(--primary-orange);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 150px; /* Consistent button size */
+    text-align: center;
+  }
+  
+  .dashboard-actions button:hover {
+    background-color: var(--primary-yellow);
+    transform: translateY(-3px);
+  }
+  
+  .dashboard-actions button:active {
+    transform: translateY(0);
+  }
+  
+  .dashboard-actions .logout-btn {
+    background-color: var(--dark-gray);
+  }
+  
+  .dashboard-actions .logout-btn:hover {
+    background-color: var(--primary-yellow);
+  }
+  
+  .error-message {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fdd;
+    border-left: 4px solid red;
+  }
+  
+  main {
+    margin-top: 20px;
+  }
+  

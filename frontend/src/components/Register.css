@@ -1,0 +1,157 @@
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+  }
+  
+  .register-container {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .form-image {
+    flex: 1;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .form-image img {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .register-form-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 2rem;
+  }
+  
+  .register-form {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .register-form:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .register-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .register-form input,
+  .register-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .register-form input:focus,
+  .register-form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  }
+  
+  .register-form input:hover,
+  .register-form select:hover {
+    border-color: #0056b3;
+  }
+  
+  .register-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .register-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-form button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+  /* Placeholder Styles */
+  .register-form input::placeholder,
+  .register-form select {
+    color: #999;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .register-container {
+      flex-direction: column;
+    }
+    
+    .form-image, 
+    .register-form-wrapper {
+      flex: none;
+      width: 100%;
+    }
+    
+    .form-image {
+      height: 30vh;
+    }
+    
+    .register-form-wrapper {
+      height: auto;
+      padding: 1rem;
+    }
+    
+    .register-form {
+      width: 100%;
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+  
+  /* Error State Styles */
+  .register-form input:invalid {
+    border-color: #dc3545;
+  }
+  
+  /* Focus Visible Styles */
+  .register-form input:focus-visible,
+  .register-form select:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }

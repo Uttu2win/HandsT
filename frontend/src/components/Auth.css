@@ -1,0 +1,35 @@
+/* Container styling to center content */
+.auth-container {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Align text to the center */
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* Actions container for buttons */
+.auth-actions {
+  display: flex; /* Enable flexbox for buttons */
+  justify-content: center; /* Center buttons horizontally */
+  gap: 20px; /* Add space between buttons */
+  margin-top: 20px; /* Add space above the buttons */
+}
+
+/* Button styling */
+.auth-btn {
+  padding: 10px 20px; /* Button size */
+  background-color: #ff5722; /* Primary button color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  color: #fff; /* Text color */
+  font-size: 16px; /* Font size for text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+.auth-btn:hover {
+  background-color: #e64a19; /* Darker shade for hover */
+}

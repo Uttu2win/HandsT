@@ -1,0 +1,141 @@
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between input fields */
+    padding: 10px; /* Padding around the entire control group */
+  }
+  
+  .filter-controls input,
+  .filter-controls select {
+    font-family: var(--body-font);
+    font-size: 16px; /* Slightly larger font size for better readability */
+    padding: 10px; /* Padding inside each field */
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    text-align: center; /* Centers text inside the input fields */
+    width: 200px; /* Adjust field width, can be tweaked */
+    box-sizing: border-box; /* Ensures padding doesn't increase size */
+  }
+  
+  .filter-controls input::placeholder {
+    color: var(--dark-gray); /* Placeholder color */
+  }
+  
+  .filter-controls select {
+    cursor: pointer; /* Pointer cursor for dropdowns */
+  }
+  
+  .filter-controls input:focus,
+  .filter-controls select:focus {
+    outline: none;
+    border-color: var(--primary-blue); /* Highlighted border on focus */
+  }
+  
+
+
+
+
+
+
+
+
+
+  .users-table {
+  width: 80%; /* Table width set to 80% of the screen */
+  margin: 20px auto; /* Center the table horizontally */
+  border-collapse: collapse;
+  font-family: var(--body-font);
+  background-color: var(--white); /* Background color for the table */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.users-table thead {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  font-size: 16px; /* Keeping default font size for the heading */
+}
+
+.users-table th,
+.users-table td {
+  padding: 15px; /* Padding for each cell */
+  text-align: center; /* Centers the content of each cell */
+  border: 1px solid var(--light-gray); /* Adds borders between cells */
+  white-space: nowrap; /* Prevents wrapping for consistent cell size */
+}
+
+.users-table tbody tr:nth-child(odd) {
+  background-color: var(--light-gray); /* Alternating row colors */
+}
+
+.users-table tbody tr:nth-child(even) {
+  background-color: var(--white);
+}
+
+.users-table img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.users-table button {
+  font-family: var(--body-font);
+  background-color: var(--primary-orange);
+  color: var(--white);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.users-table button:disabled {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px; /* Add some space above pagination */
+  }
+  
+  .pagination-controls button {
+    font-family: var(--body-font);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-blue); /* Blue background for pagination buttons */
+    color: var(--white);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .pagination-controls button:hover {
+    background-color: var(--primary-orange); /* Hover effect for buttons */
+    color: var(--white);
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls span {
+    font-family: var(--body-font);
+    color: var(--dark-gray);
+  }
+  
