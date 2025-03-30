@@ -442,13 +442,6 @@
   }
 }
 
-
-
-
-
-
-
-
 /* Search container and input styling */
 .search-container {
   width: 100%;
@@ -496,4 +489,17 @@
   transform: translateY(-50%);
   color: #6c757d;
   pointer-events: none;
+}
+
+.map-view-container {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-view-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
 }

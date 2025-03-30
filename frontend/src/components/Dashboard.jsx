@@ -5,8 +5,9 @@ import PostConfirmationModal from './PostConfirmationModal.jsx';
 import ForSaleFree from './ForSaleFree/ForSaleFree.jsx';
 import Notifications from './Notifications.jsx';
 import ProfileMenu from './Profile Management/ProfileMenu.jsx';
+import Map from './Map/Map.jsx';
 import axios from 'axios';
-import { Send, MessageCircle } from 'lucide-react';
+import { Send, MessageCircle, Map as MapIcon } from 'lucide-react';
 import './Dashboard.css';
 import { formatTimeAgo } from '../utils/dateUtils.js';
 
@@ -221,24 +222,44 @@ const handleAddComment = async (postId, commentText) => {
   };
 
   const renderSidebarButtons = () => {
-    const buttons = [
-      { view: 'home', label: 'Home' },
-      { view: 'notifications', label: 'Notifications' },
-      { view: 'chats', label: 'Chats' },
-      { view: 'forsalefree', label: 'For Sale & Free' },
-      { view: 'post', label: 'Post' },
-      
-    ];
-
-    return buttons.map(button => (
-      <button 
-        key={button.view}
-        onClick={() => setCurrentView(button.view)}
-        className={currentView === button.view ? 'active' : ''}
-      >
-        {button.label}
-      </button>
-    ));
+    return (
+      <div className="sidebar-buttons">
+        <button
+          className={`sidebar-button ${currentView === 'home' ? 'active' : ''}`}
+          onClick={() => setCurrentView('home')}
+        >
+          Home
+        </button>
+        <button
+          className={`sidebar-button ${currentView === 'map' ? 'active' : ''}`}
+          onClick={() => setCurrentView('map')}
+        >
+          <MapIcon size={20} />
+          Map
+        </button>
+        <button
+          className={`sidebar-button ${currentView === 'forSaleFree' ? 'active' : ''}`}
+          onClick={() => setCurrentView('forSaleFree')}
+        >
+          For Sale/Free
+        </button>
+        <button
+          className={`sidebar-button ${currentView === 'notifications' ? 'active' : ''}`}
+          onClick={() => setCurrentView('notifications')}
+        >
+          Notifications
+        </button>
+        <button
+          className={`sidebar-button ${currentView === 'profile' ? 'active' : ''}`}
+          onClick={() => setCurrentView('profile')}
+        >
+          Profile
+        </button>
+        <button className="sidebar-button" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
+    );
   };
 
 
@@ -427,100 +448,30 @@ const PostCard = ({ post, onLike, onComment }) => {
     switch (currentView) {
       case 'home':
         return (
-          <div className="home-content">
-            <h2>Neighborhood Updates</h2>
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search posts..."
-                className="search-input"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+          <div className="posts-container">
+            {filteredPosts.map((post) => (
+              <PostCard
+                key={post._id}
+                post={post}
+                onLike={handleLikePost}
+                onComment={handleAddComment}
               />
-            </div>
-            {isLoading ? (
-              <p>Loading posts...</p>
-            ) : error ? (
-              <p>Error: {error}</p>
-            ) : filteredPosts.length === 0 ? (
-              <p>No posts available</p>
-            ) : (
-              filteredPosts.filter(post => post && post._id).map(post => (
-                <PostCard key={post._id} post={post} />
-              ))
-            )}
+            ))}
           </div>
         );
-      case 'forsalefree':
-        return <ForSaleFree />
-
+      case 'map':
+        return (
+          <div className="map-view-container">
+            <h2>Neighborhood Map</h2>
+            <Map />
+          </div>
+        );
+      case 'forSaleFree':
+        return <ForSaleFree />;
       case 'notifications':
-        return <Notifications userId={user?._id} />;
-      case 'chats':
-        return (
-          <div className="chats-content">
-            <h2>Neighborhood Chats</h2>
-            <p>Chat feature coming soon!</p>
-          </div>
-        );
-      case 'post':
-        return (
-          <div className="post-content">
-            <h2>Create a New Post</h2>
-            <form onSubmit={handleCreatePost}>
-              <input 
-                type="text" 
-                placeholder="Post Title" 
-                name="title" 
-                required 
-              />
-              <textarea 
-                placeholder="What's happening?" 
-                name="content" 
-                required 
-              />
-              <select name="category" required>
-                <option value="">Select Category</option>
-                <option value="Events">Events</option>
-                <option value="Announcements">Announcements</option>
-                <option value="News">News</option>
-                <option value="ForSaleFree">For Sale & Free</option>
-                <option value="LostAndFound">Lost and Found</option>
-                <option value="Services">Services</option>
-              </select>
-              <div className="image-input-group">
-          <label>Add Image:</label>
-          <input 
-            type="file" 
-            name="image" 
-            accept="image/*"
-            onChange={(e) => {
-              const file = e.target.files[0];
-              if (file) {
-                // Clear image URL if file is selected
-                const urlInput = e.target.form.querySelector('input[name="imageUrl"]');
-                if (urlInput) urlInput.value = '';
-              }
-            }}
-          />
-          <div className="separator">OR</div>
-          <input 
-            type="text" 
-            placeholder="Image URL (optional)" 
-            name="imageUrl"
-            onChange={(e) => {
-              if (e.target.value) {
-                // Clear file input if URL is entered
-                const fileInput = e.target.form.querySelector('input[name="image"]');
-                if (fileInput) fileInput.value = '';
-              }
-            }}
-          />
-        </div>
-              <button type="submit">Post</button>
-            </form>
-          </div>
-        );
+        return <Notifications />;
+      case 'profile':
+        return <ProfileMenu />;
       default:
         return null;
     }
@@ -532,9 +483,6 @@ const PostCard = ({ post, onLike, onComment }) => {
       {/* Sidebar */}
       <div className="sidebar">
         {renderSidebarButtons()}
-        <button onClick={handleLogout}>
-          Logout
-        </button>
       </div>
 
       {/* Main Content Area */}
